@@ -8,9 +8,6 @@
 	<base href="{{ URL::to('/') }}">	
 
 	
-	
-
-
 @section('metatags')
 	<!-- SEO META TAGS -->
 	<meta name="description" content="Ranking" />
