@@ -25,6 +25,180 @@ body {
       .inner .top figure img {
         width: 100%; }
   .inner .list {
-    background-color: #FFFFFF; }
+    background-color: #FFFFFF;
+    float: left;
+    width: 100%; }
     .inner .list .item {
-      border-bottom: 1px solid #EFF1F4; }
+      border-bottom: 1px solid #EFF1F4;
+      padding: 18px 20px 8px 16px;
+      float: left;
+      width: 100%;
+      box-sizing: border-box;
+      position: relative;
+      background-color: #FFFFFF;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+      cursor: pointer; }
+      .inner .list .item:hover {
+        background-color: #BA78FF; }
+        .inner .list .item:hover .text p:first-of-type {
+          color: #f2f1f1; }
+        .inner .list .item:hover .text p:last-of-type {
+          color: #330d0e; }
+        .inner .list .item:hover .likes .like figure svg path,
+        .inner .list .item:hover .likes .unlike figure svg path {
+          stroke: #FFFFFF; }
+        .inner .list .item:hover .percentage {
+          opacity: 1; }
+      .inner .list .item .image {
+        float: left;
+        position: relative; }
+        .inner .list .item .image .position {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+          background-color: #FFFFFF;
+          border: 1px solid #707070; }
+          .inner .list .item .image .position p {
+            width: 100%;
+            text-align: center;
+            line-height: 22px;
+            font-family: 'proxima_nova_altbold';
+            font-weight: 700;
+            color: #707070;
+            font-size: 14pt; }
+        .inner .list .item .image figure {
+          float: left;
+          position: relative; }
+          .inner .list .item .image figure:after {
+            position: absolute;
+            content: '';
+            width: 104%;
+            height: 100%;
+            border: 4px solid #BA78FF;
+            border-radius: 50%;
+            top: 0px;
+            left: -2%;
+            box-sizing: border-box; }
+      .inner .list .item .text {
+        float: left;
+        width: 60%;
+        padding: 12px 0px 0px 15px;
+        box-sizing: border-box; }
+        .inner .list .item .text p {
+          -webkit-transition: all 0.3s;
+          transition: all 0.3s; }
+          .inner .list .item .text p:first-of-type {
+            font-size: 15pt;
+            color: #BA78FF;
+            font-family: 'proxima_nova_ltsemibold'; }
+          .inner .list .item .text p:last-of-type {
+            font-size: 10pt;
+            color: #909090;
+            font-family: 'Proxima Nova'; }
+      .inner .list .item .likes {
+        float: left;
+        width: 18%;
+        margin-top: 18px; }
+        .inner .list .item .likes .like,
+        .inner .list .item .likes .unlike {
+          float: left;
+          width: 22px; }
+          .inner .list .item .likes .like figure,
+          .inner .list .item .likes .unlike figure {
+            float: left;
+            width: 100%; }
+            .inner .list .item .likes .like figure svg,
+            .inner .list .item .likes .unlike figure svg {
+              -webkit-transition: all 0.3s;
+              transition: all 0.3s; }
+              .inner .list .item .likes .like figure svg path,
+              .inner .list .item .likes .unlike figure svg path {
+                -webkit-transition: all 0.3s;
+                transition: all 0.3s;
+                fill: transparent;
+                stroke: #bec8c8;
+                stroke-width: 3px; }
+              .inner .list .item .likes .like figure svg:hover path,
+              .inner .list .item .likes .unlike figure svg:hover path {
+                fill: #FFFFFF; }
+        .inner .list .item .likes .like figure.active svg path {
+          fill: #2ECC71;
+          stroke: #2ECC71; }
+        .inner .list .item .likes .unlike {
+          margin: 7px 0px 0px 11px; }
+          .inner .list .item .likes .unlike figure svg {
+            -webkit-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            transform: rotate(180deg); }
+          .inner .list .item .likes .unlike figure.active path {
+            fill: #e74c3c;
+            stroke: #e74c3c; }
+      .inner .list .item .percentage {
+        position: absolute;
+        right: -167px;
+        top: 0;
+        opacity: 0;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        margin-top: 13px;
+        width: 155px;
+        background-color: #FFFFFF;
+        border-radius: 5px; }
+        .inner .list .item .percentage .like,
+        .inner .list .item .percentage .unlike {
+          float: left; }
+          .inner .list .item .percentage .like p,
+          .inner .list .item .percentage .unlike p {
+            float: left;
+            font-size: 9pt;
+            text-transform: uppercase;
+            text-align: center;
+            width: 100%;
+            font-family: 'proxima_nova_altbold'; }
+            .inner .list .item .percentage .like p:first-of-type,
+            .inner .list .item .percentage .unlike p:first-of-type {
+              background-color: #BA78FF;
+              color: #f8f7f7;
+              line-height: 20px; }
+            .inner .list .item .percentage .like p:last-of-type,
+            .inner .list .item .percentage .unlike p:last-of-type {
+              color: #909090;
+              font-size: 20pt;
+              width: 100%; }
+        .inner .list .item .percentage .like {
+          width: 43%;
+          border-right: 1px solid #8C8B8B;
+          box-sizing: border-box; }
+          .inner .list .item .percentage .like p:first-of-type {
+            border-top-left-radius: 5px; }
+        .inner .list .item .percentage .unlike {
+          width: 57%; }
+          .inner .list .item .percentage .unlike p:first-of-type {
+            border-top-right-radius: 5px; }
+      .inner .list .item.form:hover {
+        background-color: transparent; }
+      .inner .list .item.form .text {
+        margin-bottom: 20px; }
+        .inner .list .item.form .text p:last-of-type {
+          font-size: 12pt; }
+      .inner .list .item.form form {
+        float: left;
+        width: 100%; }
+        .inner .list .item.form form .input_group {
+          width: 100%;
+          float: left;
+          height: 25px;
+          margin-bottom: 10px; }
+          .inner .list .item.form form .input_group input {
+            width: 100%;
+            height: 100%;
+            float: left;
+            font-size: 12pt;
+            color: #909090;
+            font-family: 'Proxima Nova';
+            padding: 0px 10px;
+            box-sizing: border-box; }

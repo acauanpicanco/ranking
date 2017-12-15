@@ -52,7 +52,7 @@ gulp.task('server', ['build-sass', 'browserSync'], function() {
   gulp.watch('resources/**/*.scss').on('change', function (){
     gulp.start('build-sass');
   });
-  gulp.watch('public/**/*').on('change', browserSync.reload);
+//  gulp.watch('public/**/*').on('change', browserSync.reload);
 });
 
 
@@ -74,6 +74,7 @@ gulp.task('browserSync', function() {
     }
   })
 });
+
 
 
 gulp.task('js', function(){

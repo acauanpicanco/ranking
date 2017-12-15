@@ -30,7 +30,10 @@ class CharacterController extends Controller
      */
     public function create()
     {
-        //
+
+        return view('manager-create');
+        
+        
     }
 
     /**
@@ -41,7 +44,30 @@ class CharacterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        if ($request->hasFile('image')) {
+            
+            $img_name = uniqid().'-'.$request->file('image')->getClientOriginalName();
+
+             $request->file('image')->move( 'upload/' , $img_name);
+
+
+            // ensure every image has a different name
+            // $file_name = $request->file('image')->hashName();
+            
+            // save new image $file_name to database
+           
+        }
+
+        
+        $data = $request->only('name', 'description');
+
+        $data['image'] = $img_name;
+
+
+       Character::create($data);
+
+        return redirect('/');
     }
 
     /**
@@ -50,9 +76,14 @@ class CharacterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
+        
         //
+        $characters = Character::orderBy('like', 'DESC')->get();
+        return view('manager-list', compact('characters'));
+    
+
     }
 
     /**
@@ -63,7 +94,8 @@ class CharacterController extends Controller
      */
     public function edit($id)
     {
-        //
+        $character = Character::find($id);
+        return view('manager-edit', compact('character'));
     }
 
     /**
@@ -76,6 +108,28 @@ class CharacterController extends Controller
     public function update(Request $request, $id)
     {
         //
+         $character = Character::find(1);
+
+        $character->name =  $request->get('name');
+        $character->description =  $request->get('description');
+
+        if ($request->hasFile('image')) {
+            
+            $img_name = uniqid().'-'.$request->file('image')->getClientOriginalName();
+
+             $request->file('image')->move( 'upload/' , $img_name);
+
+             $character->image = $img_name;
+
+
+        }
+       
+              
+
+        $character->save();
+
+         return redirect('/manager-list');
+        
     }
 
     /**
@@ -87,5 +141,11 @@ class CharacterController extends Controller
     public function destroy($id)
     {
         //
+       $character = Character::find($id);
+
+       $character->delete();
+
+       return redirect('/manager-list');
     }
 }
+

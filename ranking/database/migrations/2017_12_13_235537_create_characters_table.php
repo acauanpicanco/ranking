@@ -18,8 +18,8 @@ class CreateCharactersTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('image');
-            $table->integer('like');
-            $table->integer('unlike');
+            $table->integer('like')->default(0);
+            $table->integer('unlike')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

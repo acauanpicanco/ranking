@@ -26,11 +26,14 @@
 	
 
 @show
-	<link href="https://fonts.googleapis.com/css?family=Cairo:300,400,600,700|Saira:200,300,400,500,600,700,800|Saira+Condensed:300,400,500,700,800|Saira+Extra+Condensed:400,600,800" rel="stylesheet">
+	
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
 	
 	
 		
-		<link rel="stylesheet" href="{{ URL::asset('assets/css/variaveis-cor.css') }}">
+		<link rel="stylesheet" href="{{ URL::asset('assets/css/variaveis-cores.css') }}">
+		<link rel="stylesheet" href="{{ URL::asset('assets/css/fonts.css') }}">	
+
 		<link rel="stylesheet" href="{{ URL::asset('assets/css/style.css') }}">	
 
 	@yield('style')
